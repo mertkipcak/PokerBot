@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c620a30b-301f-41bb-b226-b945952c30a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Permanent_Script_Dependencies.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jetbrains_kotlin_test_junit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerTest.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Card.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Constants.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Hand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/OddsCalculator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core/HandTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Hand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Hand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core/HandTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core/HandTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +39,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.HandTest (1).executor": "Run",
+    "JUnit.HandTest (2).executor": "Run",
+    "JUnit.HandTest (3).executor": "Run",
+    "JUnit.HandTest (4).executor": "Run",
+    "JUnit.HandTest (5).executor": "Run",
     "JUnit.HandTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,7 +60,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,7 +72,7 @@
       <recent name="services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HandTest (2)">
+  <component name="RunManager" selected="JUnit.HandTest (1)">
     <configuration name="HandTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PokerBot" />
       <extension name="coverage">
@@ -98,7 +88,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandTest (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokerBot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.HandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandTest (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokerBot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.HandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandTest (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PokerBot" />
       <extension name="coverage">
         <pattern>
@@ -130,9 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HandTest (2)" />
         <item itemvalue="JUnit.HandTest (1)" />
         <item itemvalue="JUnit.HandTest" />
+        <item itemvalue="JUnit.HandTest (5)" />
+        <item itemvalue="JUnit.HandTest (4)" />
+        <item itemvalue="JUnit.HandTest (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714269900225</updated>
       <workItem from="1714269901153" duration="2373000" />
-      <workItem from="1714281346227" duration="10824000" />
+      <workItem from="1714281346227" duration="14538000" />
     </task>
     <servers />
   </component>
