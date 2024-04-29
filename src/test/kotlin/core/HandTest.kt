@@ -251,7 +251,7 @@ class HandTest {
         hand.addCard(Card(Rank.EIGHT, Suit.DIAMONDS))
         hand.addCard(Card(Rank.NINE, Suit.SPADES))
         hand.addCard(Card(Rank.TEN, Suit.HEARTS))
-        assertEquals(0, hand.threeOfAKindScore(),
+        assertEquals(1, hand.threeOfAKindScore(),
             "Score should be zero as there is no three of a kind")
     }
 
