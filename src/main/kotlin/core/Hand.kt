@@ -302,4 +302,8 @@ class Hand {
     fun calcHighCardScore(rank: Int): Int {
         return HandType.HIGH_CARD.value + rank
     }
+
+    override fun toString(): String {
+        return cards.toString()
+    }
 }

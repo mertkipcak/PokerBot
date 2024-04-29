@@ -15,8 +15,8 @@ fun main() {
         player2.addCard(deck.draw())
     }
 
-    println(player1.getCards())
-    println(player2.getCards())
+    println(player1)
+    println(player2)
 
     val p1wins = player1.score() > player2.score()
     if (p1wins) {
