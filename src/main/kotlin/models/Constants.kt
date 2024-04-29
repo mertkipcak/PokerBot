@@ -1,4 +1,5 @@
-package org.mkipcak.core
+package org.mkipcak.models
+
 
 enum class HandType(val value: Int) {
     HIGH_CARD(0),

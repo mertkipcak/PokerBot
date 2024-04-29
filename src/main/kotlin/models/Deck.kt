@@ -1,4 +1,4 @@
-package org.mkipcak.core
+package org.mkipcak.models
 
 class Deck {
     private val cards: MutableList<Card> = mutableListOf()

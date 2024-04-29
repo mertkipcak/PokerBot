@@ -1,4 +1,4 @@
-package org.mkipcak.services
+package models
 
 import org.mkipcak.core.*
 

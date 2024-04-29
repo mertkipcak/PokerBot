@@ -1,4 +1,4 @@
-package org.mkipcak.core
+package org.mkipcak.models
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach

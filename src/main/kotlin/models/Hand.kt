@@ -1,4 +1,4 @@
-package org.mkipcak.core
+package org.mkipcak.models
 
 /**
  * Represents a poker hand which can evaluate itself to determine the best poker hand score.

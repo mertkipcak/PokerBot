@@ -1,13 +1,13 @@
-package org.mkipcak.services
+package models
 
-import org.mkipcak.core.Card
-import org.mkipcak.core.Deck
-import org.mkipcak.core.Hand
-import org.mkipcak.core.HandType
+import org.mkipcak.models.Card
+import org.mkipcak.models.Deck
+import org.mkipcak.models.Hand
+import org.mkipcak.models.HandType
 import kotlin.math.max
 
 class OddsCalculatorMC : OddsCalculator {
-    private var nSamples: Int = 1000000
+    private var nSamples: Int = 100000
 
     fun setSampleCount(n: Int) {
         nSamples = n

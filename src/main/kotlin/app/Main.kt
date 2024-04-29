@@ -1,7 +1,7 @@
-package org.mkipcak
+package org.mkipcak.app
 
 import org.mkipcak.core.*
-import org.mkipcak.services.OddsCalculatorMC
+import models.OddsCalculatorMC
 
 fun main() {
     val deck = Deck()

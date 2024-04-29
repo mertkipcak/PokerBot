@@ -1,4 +1,4 @@
-package org.mkipcak.core
+package org.mkipcak.models
 
 class Card(val rank: Rank, val suit: Suit) {
 
