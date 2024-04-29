@@ -1,4 +1,4 @@
-package core
+package org.mkipcak.core
 
 /**
  * Represents a poker hand which can evaluate itself to determine the best poker hand score.
@@ -301,5 +301,9 @@ class Hand {
      */
     fun calcHighCardScore(rank: Int): Int {
         return HandType.HIGH_CARD.value + rank
+    }
+
+    override fun toString(): String {
+        return cards.toString()
     }
 }

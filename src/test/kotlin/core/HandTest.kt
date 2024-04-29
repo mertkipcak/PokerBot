@@ -1,4 +1,4 @@
-package core
+package org.mkipcak.core
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

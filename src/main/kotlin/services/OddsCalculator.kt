@@ -1,6 +1,6 @@
-package services
+package org.mkipcak.services
 
-import core.Card
+import org.mkipcak.core.Card
 
 class OddsCalculator(hand: List<Card>, table: List<Card>) {
     val hand: List<Card> = hand
