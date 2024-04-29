@@ -13,6 +13,14 @@ class Deck {
         }
     }
 
+    fun clear() {
+        cards.clear()
+    }
+
+    fun addCard(card: Card) {
+        cards.add(card)
+    }
+
     fun shuffle() {
         cards.shuffle()
     }
@@ -21,5 +29,9 @@ class Deck {
         val card = cards[0]
         cards.removeFirst()
         return card
+    }
+
+    fun getCardCount(): Int {
+        return cards.size
     }
 }
