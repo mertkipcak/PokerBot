@@ -22,6 +22,17 @@ class Hand {
     }
 
     /**
+     * Set hand to given cards
+     * @param newCards new cards to set the hand to
+     */
+    fun setCards(newCards: List<Card>) {
+        cards.clear()
+        for (card in cards) {
+            cards.add(card)
+        }
+    }
+
+    /**
      * Returns a mutable list of cards in the hand.
      * @return MutableList of cards.
      */

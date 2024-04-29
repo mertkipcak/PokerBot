@@ -21,6 +21,10 @@ class Deck {
         cards.add(card)
     }
 
+    fun removeCard(card: Card) {
+        cards.remove(card)
+    }
+
     fun shuffle() {
         cards.shuffle()
     }

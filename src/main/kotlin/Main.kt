@@ -1,28 +1,26 @@
 package org.mkipcak
 
 import org.mkipcak.core.*
+import org.mkipcak.services.OddsCalculatorMC
 
 fun main() {
     val deck = Deck()
     deck.reset()
     deck.shuffle()
 
-    val player1 = Hand()
-    val player2 = Hand()
+    val playerCards: List<Card> = listOf(
+        Card(Rank.ACE, Suit.SPADES),
+        Card(Rank.ACE, Suit.CLUBS)
+    )
+    val table: List<Card> = listOf(
+        Card(Rank.QUEEN, Suit.HEARTS),
+        Card(Rank.TWO, Suit.CLUBS),
+        Card(Rank.THREE, Suit.SPADES)
+    )
 
-    for (i in 1..5) {
-        player1.addCard(deck.draw())
-        player2.addCard(deck.draw())
-    }
+    val oddsCalculator = OddsCalculatorMC()
 
-    println(player1)
-    println(player2)
+    val p = oddsCalculator.findProbability(playerCards, table, 3)
 
-    val p1wins = player1.score() > player2.score()
-    if (p1wins) {
-        println("Player 1 wins")
-    } else {
-        println("Player 2 wins")
-    }
-    println(deck)
+    print("Probability of winning is: $p")
 }
