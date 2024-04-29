@@ -1,4 +1,4 @@
-package core
+package org.mkipcak.core
 
 /**
  * Represents a poker hand which can evaluate itself to determine the best poker hand score.

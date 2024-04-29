@@ -1,4 +1,4 @@
-package core
+package org.mkipcak.core
 
 enum class HandType(val value: Int) {
     HIGH_CARD(0),
@@ -16,7 +16,12 @@ enum class Suit(val value: Int) {
     CLUBS(1),
     DIAMONDS(2),
     HEARTS(3),
-    SPADES(4)
+    SPADES(4);
+
+    companion object {
+        private val map = Suit.entries.associateBy(Suit::value)
+        fun fromInt(type: Int) = map[type]
+    }
 }
 
 enum class Rank(val value: Int) {
@@ -33,5 +38,10 @@ enum class Rank(val value: Int) {
     JACK(11),
     QUEEN(12),
     KING(13),
-    ACE(14),
+    ACE(14);
+
+    companion object {
+        private val map = entries.associateBy(Rank::value)
+        fun fromInt(type: Int) = map[type]
+    }
 }
