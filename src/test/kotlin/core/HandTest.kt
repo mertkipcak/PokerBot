@@ -265,7 +265,6 @@ class HandTest {
         hand.addCard(Card(Rank.ACE, Suit.SPADES))
         hand.addCard(Card(Rank.ACE, Suit.CLUBS))
         hand.addCard(Card(Rank.ACE, Suit.DIAMONDS))
-        val expectedScore = hand.calcThreeOfAKindScore(Rank.SEVEN.value)
         assertEquals(hand.calcThreeOfAKindScore(Rank.ACE.value), hand.threeOfAKindScore(),
             "Score should be the highest three of a kind")
     }
