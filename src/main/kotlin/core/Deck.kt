@@ -3,7 +3,7 @@ package org.mkipcak.core
 class Deck {
     private val cards: MutableList<Card> = mutableListOf()
 
-    fun resetDeck() {
+    fun reset() {
         cards.clear()
 
         for (i in 2..14) {
@@ -13,7 +13,7 @@ class Deck {
         }
     }
 
-    fun shuffleDeck() {
+    fun shuffle() {
         cards.shuffle()
     }
 
