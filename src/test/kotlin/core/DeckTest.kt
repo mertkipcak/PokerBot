@@ -43,4 +43,20 @@ class DeckTest {
         assertEquals(51, deck.getCardCount(), "After drawing one card, 51 should remain.")
     }
 
+    @Test
+    fun testRemoveCard() {
+        val cardToRemove = Card(Rank.FIVE, Suit.HEARTS)
+        assertEquals(52, deck.getCardCount(), "Deck should have 53 cards after adding one.")
+
+        deck.removeCard(cardToRemove)  // Now remove the card
+        assertEquals(51, deck.getCardCount(), "Deck should have 52 cards after removing one.")
+    }
+
+    @Test
+    fun testRemoveCardNotInDeck() {
+        val cardNotInDeck = deck.draw()
+        // Let's assume we haven't added this card, so it should not be in the deck
+        deck.removeCard(cardNotInDeck)
+        assertEquals(51, deck.getCardCount(), "Removing a card that is not in the deck should not change the deck size.")
+    }
 }

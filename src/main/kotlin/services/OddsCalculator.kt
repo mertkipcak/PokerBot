@@ -1,20 +1,7 @@
 package org.mkipcak.services
 
-import org.mkipcak.core.Card
+import org.mkipcak.core.*
 
-class OddsCalculator(hand: List<Card>, table: List<Card>) {
-    val hand: List<Card> = hand
-    val table: List<Card> = table
-
-    fun calculateOdds() {
-
-    }
-
-    fun isHandWinning(hand1: List<Card>, hand2: List<Card>): Boolean {
-        // Check straight flushes
-
-
-        // stub
-        return false
-    }
+interface OddsCalculator {
+    fun findProbability(playerHand: List<Card>, table: List<Card>, totalPlayers: Int): Double
 }
