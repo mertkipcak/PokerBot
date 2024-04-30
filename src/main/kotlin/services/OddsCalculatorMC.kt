@@ -1,10 +1,6 @@
 package org.mkipcak.services
 
-import org.mkipcak.core.Card
-import org.mkipcak.core.Deck
-import org.mkipcak.core.Hand
-import org.mkipcak.core.HandType
-import kotlin.math.max
+import org.mkipcak.core.*
 
 class OddsCalculatorMC : OddsCalculator {
     private var nSamples: Int = 1000000
@@ -13,18 +9,20 @@ class OddsCalculatorMC : OddsCalculator {
         nSamples = n
     }
 
-    override fun findProbability(playerHand: List<Card>, table: List<Card>, totalPlayers: Int): Double {
+    override fun findProbability(playerHand: List<Card>, table: List<Card>, totalPlayers: Int): Probabilities {
         if (totalPlayers > 10) {
             println("Too many players")
-            return 0.0
+            return Probabilities()
         }
 
         val deck = Deck()
-        val player = Hand()
-        val otherPlayers: Array<Hand> = Array(totalPlayers - 1) { Hand() }
+        val player = Player()
+        val otherPlayers: Array<Player> = Array(totalPlayers - 1) { Player() }
         val playerBuckets: Array<Int> = Array(HandType.entries.size) { 0 }
         val highestOtherPlayerBuckets: Array<Int> = Array(HandType.entries.size) { 0 }
         var wins = 0
+        var ties = 0
+        var otherWin = 0
 
         for (i in 1..nSamples) {
             deck.reset()
@@ -43,28 +41,57 @@ class OddsCalculatorMC : OddsCalculator {
             }
 
             // Distribute cards to other players
-            var highestOtherScore = 0
+            var otherPlayersBestHand = Hand()
             otherPlayers.forEach { hand ->
                 hand.resetCards()
                 repeat(2) { hand.addCard(deck.draw()) }
                 currentTable.forEach { hand.addCard(it) }
-                val score = hand.score()
-                highestOtherScore = max(highestOtherScore, score)
+                val bestHand = hand.bestHand()
+                otherPlayersBestHand = listOf(otherPlayersBestHand, bestHand).max()
             }
 
             // Add all table cards to player hand
             currentTable.forEach { player.addCard(it) }
 
-            val playerScore = player.score()
-            val playerHandType = HandType.entries.find { it.value == playerScore / 10000 * 10000 } ?: HandType.HIGH_CARD
+            val playerBestHand = player.bestHand()
+            val playerHandType = playerBestHand.type
             playerBuckets[playerHandType.ordinal]++
 
-            val highestOtherHandType = HandType.entries.find { it.value == highestOtherScore / 10000 * 10000 } ?: HandType.HIGH_CARD
+            val highestOtherHandType = otherPlayersBestHand.type
             highestOtherPlayerBuckets[highestOtherHandType.ordinal]++
 
-            if (playerScore > highestOtherScore) wins++
+            if (playerBestHand > otherPlayersBestHand) wins++
+            else if (playerBestHand == otherPlayersBestHand) ties++
+
+            else otherWin++
         }
 
-        return wins / nSamples.toDouble()
+        val simCount = nSamples.toDouble()
+
+        val probabilities = Probabilities(
+            playerWinChance = wins / simCount,
+            playerTieChance = ties / simCount,
+            playerHighCardChance = playerBuckets[HandType.HIGH_CARD.ordinal] / simCount,
+            playerPairChance = playerBuckets[HandType.PAIR.ordinal] / simCount,
+            playerTwoPairsChance = playerBuckets[HandType.TWO_PAIR.ordinal] / simCount,
+            playerThreeOfAKindChance = playerBuckets[HandType.THREE_OF_A_KIND.ordinal] / simCount,
+            playerStraightChance = playerBuckets[HandType.STRAIGHT.ordinal] / simCount,
+            playerFlushChance = playerBuckets[HandType.FLUSH.ordinal] / simCount,
+            playerFullHouseChance = playerBuckets[HandType.FULL_HOUSE.ordinal] / simCount,
+            playerFourOfAKindChance = playerBuckets[HandType.FOUR_OF_A_KIND.ordinal] / simCount,
+            playerStraightFlushChance = playerBuckets[HandType.STRAIGHT_FLUSH.ordinal] / simCount,
+            otherPlayersWinChance = otherWin / simCount,
+            otherPlayersHighCardChance = highestOtherPlayerBuckets[HandType.HIGH_CARD.ordinal] / simCount,
+            otherPlayersPairChance = highestOtherPlayerBuckets[HandType.PAIR.ordinal] / simCount,
+            otherPlayersTwoPairsChance = highestOtherPlayerBuckets[HandType.TWO_PAIR.ordinal] / simCount,
+            otherPlayersThreeOfAKindChance = highestOtherPlayerBuckets[HandType.THREE_OF_A_KIND.ordinal] / simCount,
+            otherPlayersStraightChance = highestOtherPlayerBuckets[HandType.STRAIGHT.ordinal] / simCount,
+            otherPlayersFlushChance = highestOtherPlayerBuckets[HandType.FLUSH.ordinal] / simCount,
+            otherPlayersFullHouseChance = highestOtherPlayerBuckets[HandType.FULL_HOUSE.ordinal] / simCount,
+            otherPlayersFourOfAKindChance = highestOtherPlayerBuckets[HandType.FOUR_OF_A_KIND.ordinal] / simCount,
+            otherPlayersStraightFlushChance = highestOtherPlayerBuckets[HandType.STRAIGHT_FLUSH.ordinal] / simCount
+        )
+
+        return probabilities
     }
 }

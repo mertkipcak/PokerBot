@@ -3,7 +3,7 @@ package org.mkipcak.core
 enum class HandType(val value: Int) {
     HIGH_CARD(0),
     PAIR(10000),
-    TWO_PAIRS(20000),
+    TWO_PAIR(20000),
     THREE_OF_A_KIND(30000),
     STRAIGHT(40000),
     FLUSH(50000),
