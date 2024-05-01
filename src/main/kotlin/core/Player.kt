@@ -1,13 +1,13 @@
 package org.mkipcak.core
 
 /**
- * Represents a poker hand which can evaluate itself to determine the best poker hand score.
+ * Represents a player hand which can evaluate the best hand out of the cards
  */
 class Player {
     private val cards: MutableList<Card> = mutableListOf()
 
     /**
-     * Adds a card to the hand.
+     * Adds a card to the player's hand.
      * @param card The card to be added.
      */
     fun addCard(card: Card) {
@@ -15,14 +15,14 @@ class Player {
     }
 
     /**
-     * Clears all cards from the hand.
+     * Clears all cards from the player's hand.
      */
     fun resetCards() {
         cards.clear()
     }
 
     /**
-     * Set hand to given cards
+     * Set player cards to given cards
      * @param newCards new cards to set the hand to
      */
     fun setCards(newCards: List<Card>) {
@@ -41,8 +41,8 @@ class Player {
     }
 
     /**
-     * Evaluates the hand and returns the highest score based on poker hand rankings.
-     * @return The highest score from all possible poker hand evaluations.
+     * Evaluates the hand and returns the best hand based on poker hand rankings.
+     * @return The best hand from all possible poker hand evaluations.
      */
     fun bestHand(): Hand {
         val hands = listOf(

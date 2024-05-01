@@ -39,7 +39,7 @@ class Hand(
 
     override fun hashCode(): Int {
         var result = type.hashCode()
-        result = 31 * result + cards.hashCode()
+        result = 31 * result + cards.map { it.rank }.hashCode()
         return result
     }
 }
