@@ -9,18 +9,22 @@ fun main() {
     deck.shuffle()
 
     val playerCards: List<Card> = listOf(
-        Card(Rank.ACE, Suit.SPADES),
-        Card(Rank.ACE, Suit.CLUBS)
+        Card(Rank.NINE, Suit.DIAMONDS),
+        Card(Rank.SEVEN, Suit.CLUBS)
     )
     val table: List<Card> = listOf(
-        Card(Rank.QUEEN, Suit.HEARTS),
+        Card(Rank.TEN, Suit.DIAMONDS),
         Card(Rank.TWO, Suit.CLUBS),
-        Card(Rank.THREE, Suit.SPADES)
+        Card(Rank.EIGHT, Suit.DIAMONDS),
+        Card(Rank.TEN, Suit.HEARTS),
+        Card(Rank.EIGHT, Suit.CLUBS),
     )
+
+    val totalPlayerCount = 2
 
     val oddsCalculator = OddsCalculatorMC()
 
-    val p = oddsCalculator.findProbability(playerCards, table, 3)
+    val p = oddsCalculator.findProbability(playerCards, table, totalPlayerCount)
 
-    print("Probability of winning is: $p")
+    print(p)
 }
